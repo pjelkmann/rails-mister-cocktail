@@ -1,6 +1,19 @@
-<div>
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
-  <% end %>
+<div class= 'big-box'>
+  <div class="creation-form">
+    <%= simple_form_for @cocktail do |f| %>
+      <div>
+        <%= f.input :name %>
+
+        </div>
+      <div>
+        <%= f.simple_fields_for :doses do |dose| %>
+          <%= render 'dose_fields', f: dose %>
+        <% end %>
+        <%= link_to_add_association 'add dose', f, :doses %>
+        <%= f.submit %>
+          <% end %>
+        </div>
   </div>
+</div>
+
+<%= link_to 'back', root_path %>

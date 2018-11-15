@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+.big-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.cocktail-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  width: 85vw;
+}
+
+.grid-item {
+  height: 170px;
+  justify-self: stretch;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(mojito.jpeg);
+  background-position: center;
+  background-size: cover;
+  margin: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+}
+
+
+.fa-trash-alt {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}

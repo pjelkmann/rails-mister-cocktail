@@ -1,0 +1,4 @@
+<%= f.input :description %>
+<%= f.association :ingredient %>
+<%= f.input :cocktail, input_html: {value: @cocktail.id}, as: :hidden %>
+<%= link_to_remove_association "remove dose", f %>

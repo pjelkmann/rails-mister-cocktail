@@ -1,12 +1,24 @@
-<h1>Cocktails</h1>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
-      <%= link_to 'delete', cocktail_path(cocktail), method: :delete, data: {confirm: "Dumb idea"}  %>
-    </li>
+<div class="big-box">
+  <h1 class= 'header'>Cocktails</h1>
+  <div class="cocktail-list">
+    <% @cocktails.each do |cocktail| %>
+    <div class="grid-item">
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="card-title">
+        <p class= card-title-cover>
+          <%= cocktail.name %>
+        </p>
+      </div>
+      <% end %>
+      <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Dumb idea"} do  %>
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </div>
     <% end %>
-</ul>
+  </div>
+  <div>
+   <%= link_to 'Add Cocktail', new_cocktail_path  %>
+ </div>
+</div>
 
 
-<%= link_to 'Add Cocktail', new_cocktail_path  %>

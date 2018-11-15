@@ -9,10 +9,11 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
+    @dose = Dose.new
   end
 
   def create
-    @cocktail = Cocktail.create(cocktails_params)
+    @cocktail = Cocktail.create(project_params)
     if @cocktail.save
       redirect_to root_path
     else
@@ -26,19 +27,19 @@ class CocktailsController < ApplicationController
   end
 
   def update
-    @cocktail = Cocktail.update(cocktails_params)
+    @cocktail = Cocktail.update(project_params)
     redirect_to cocktail_path(@cocktail)
   end
 
   def destroy
     @cocktail = Cocktail.find(params[:id])
-    @cocktail.delete
+    @cocktail.destroy
     redirect_to root_path
   end
 
   private
 
-  def cocktails_params
-    params.require(:cocktail).permit(:name)
+  def project_params
+    params.require(:cocktail).permit(:name, doses_attributes: [:id, :description, :ingredient_id])
   end
 end
