@@ -1,0 +1,88 @@
+.banner {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(banner.jpg);
+  color: $main-white;
+  text-align: center;
+  height: calc(65vh - 70px);
+  width: 100vw;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.bttn-dark {
+  font-size:18px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:inline-block;
+  text-align:center;
+  color: $main-white;
+  width:270px;
+  font-weight:bold;
+  padding:14px 0px;
+  border:3px solid $main-red;
+  border-radius:2px;
+  position:relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.1);
+  z-index:2;
+  &:before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    background-color: $main-red;
+    z-index:-1;
+  }
+  &:hover {
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+      text-decoration: none;
+      color: $main-white;
+    }
+  }
+  &:focus {
+    &:before {
+      -webkit-transition:0.5s all ease;
+      transition:0.5s all ease;
+      left:0;
+      right:0;
+      opacity:1;
+    }
+  }
+}
+
+a.bttn-dark {
+  color: $main-white;
+  text-decoration:none;
+  -webkit-transition:0.3s all ease;
+  transition:0.3s ease all;
+  &:hover {
+    color: $main-white;
+  }
+  &:focus {
+    color: $main-white;
+  }
+}
+

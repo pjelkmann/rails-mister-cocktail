@@ -1,15 +1,29 @@
-<h1><%= @cocktail.name %></h1>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= "#{dose.description}, #{dose.ingredient.name}" %>
-      <%= link_to 'delete dose', cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Dumb idea"}  %>
-    </li>
-  <% end %>
-</ul>
-
-
-
-
-
-<%= link_to 'back', root_path  %>
-<%= link_to 'Edit', edit_cocktail_path(@cocktail)  %>
+<div class="show-box">
+  <div class="show-middle">
+    <div class="show-left">
+      <h1><%= @cocktail.name %></h1>
+      <% @cocktail.doses.each do |dose| %>
+      <div class="dose-item">
+        <%= "-- #{dose.description} of #{dose.ingredient.name}" %>
+        <div class="delete-dose">
+          <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Dumb idea"} do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+      <div class="buttons-bottom">
+        <button class= 'buttn-dark'>
+          <%= link_to 'back', root_path, :class => 'button-text'  %>
+        </button>
+        <button class= 'buttn-dark'>
+          <%= link_to 'Edit', edit_cocktail_path(@cocktail), :class => 'button-text'  %>
+        </button>
+      </div>
+    </div>
+    <div class="show-right">
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    </div>
+  </div>
+</div>
+</div>

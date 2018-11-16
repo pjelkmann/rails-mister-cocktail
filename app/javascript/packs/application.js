@@ -8,4 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import 'bootstrap';
-window.$ = window.jQuery = require("jquery")
+import { loadDynamicBannerText } from '../components/typed';
+loadDynamicBannerText();

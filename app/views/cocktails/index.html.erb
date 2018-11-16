@@ -1,11 +1,9 @@
 <div class="big-box">
+  <%= render "components/banner" %>
   <h1 class= 'header'>Cocktails</h1>
   <div class="cocktail-list">
     <%= render @cocktails %>
   </div>
-  <div>
-   <%= link_to 'Add Cocktail', new_cocktail_path  %>
- </div>
 </div>
 
 

@@ -40,6 +40,6 @@ class CocktailsController < ApplicationController
   private
 
   def project_params
-    params.require(:cocktail).permit(:name, doses_attributes: [:id, :description, :ingredient_id])
+    params.require(:cocktail).permit(:name, :photo, doses_attributes: [:id, :description, :ingredient_id])
   end
 end

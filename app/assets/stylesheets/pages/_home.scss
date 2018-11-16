@@ -16,7 +16,6 @@
 .grid-item {
   height: 170px;
   width: 30%;
-  background-image: url(mojito.jpeg);
   background-position: center;
   background-size: cover;
   margin: 15px;
@@ -55,4 +54,10 @@
 
 .fa-trash-alt {
   color: $main-red;
+}
+
+.header {
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 2px 21px rgba(0, 0, 0, 0.1), 0px 18px 11px rgba(0, 0, 0, 0.1);
 }
