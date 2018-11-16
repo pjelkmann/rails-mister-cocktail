@@ -1,0 +1,12 @@
+<div class="grid-item">
+    <%= link_to cocktail_path(cocktail), :class => 'cocktail-link' do %>
+    <div class="card-title">
+        <%= cocktail.name %>
+    </div>
+    <% end %>
+  <div class="delete-link">
+    <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Dumb idea"} do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>

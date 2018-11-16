@@ -8,18 +8,14 @@
 }
 
 .cocktail-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  display: flex;
+  flex-wrap: wrap;
   width: 85vw;
 }
 
 .grid-item {
   height: 170px;
-  justify-self: stretch;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
+  width: 30%;
   background-image: url(mojito.jpeg);
   background-position: center;
   background-size: cover;
@@ -34,12 +30,29 @@
   font-size: 25px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   color: $main-red;
+  &:hover{
+    opacity: 0.9;
+  }
 }
 
+.cocktail-link {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  &:hover{
+    text-decoration: none;
+  }
+}
 
-.fa-trash-alt {
+.delete-link {
   position: absolute;
-  color: $main-red;
   top: 5px;
   right: 7px;
+  z-index: 2;
+}
+
+.fa-trash-alt {
+  color: $main-red;
 }

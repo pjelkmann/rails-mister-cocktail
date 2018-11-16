@@ -35,6 +35,8 @@ gem 'simple_form'
 gem "cocoon"
 gem 'figaro'
 gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 # Use ActiveStorage variant
