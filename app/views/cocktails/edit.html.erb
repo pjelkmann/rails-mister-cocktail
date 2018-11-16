@@ -1,14 +1,26 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="edit-box">
+  <div class="edit-middle">
 
-<div>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit %>
-<% end %>
+    <div class="forms">
+      <div class="rename-cocktail">
+        <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.label :name, 'Cocktail' %>
+        <%= f.input :name %>
+        <%= f.button :submit, 'update', class: 'buttn-dark'  %>
+        <% end %>
+      </div>
+       <div class="dose-form">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+         <%= f.label :description, 'Dose' %>
+         <%= f.input :description %>
+         <%= f.association :ingredient %>
+         <%= f.button :submit,  class: 'buttn-dark'  %>
+        <% end %>
+      </div>
+    </div>
+
+    <button class="buttn-dark">
+      <%= link_to 'back', cocktail_path(@cocktail), :class => 'button-text' %>
+    </button>
   </div>
-
-  <%= link_to 'back', cocktail_path(@cocktail) %>
+</div>

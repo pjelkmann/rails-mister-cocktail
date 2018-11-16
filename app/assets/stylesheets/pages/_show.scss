@@ -28,10 +28,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80%
+  width: 80%;
+  margin: 15px;
 }
 
 .buttn-dark {
+  margin: 0 5px;
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
